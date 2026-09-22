@@ -161,6 +161,9 @@ GLOBAL_LIST_INIT(roleplay_readme, file2list("strings/rt/Lore_Primer.txt"))
 
 	if(href_list["ready"])
 		var/tready = text2num(href_list["ready"])
+		if(tready != PLAYER_NOT_READY && !is_discord_verified())
+			to_chat(usr, span_boldwarning("You must verify your Discord account before readying up. Use 'Verify Discord Account' in the OOC menu."))
+			return
 		//Avoid updating ready if we're after PREGAME (they should use latejoin instead)
 		//This is likely not an actual issue but I don't have time to prove that this
 		//no longer is required
@@ -196,6 +199,9 @@ GLOBAL_LIST_INIT(roleplay_readme, file2list("strings/rt/Lore_Primer.txt"))
 		gc.possess_vessel(src)
 
 	if(href_list["late_join"])
+		if(!is_discord_verified())
+			to_chat(usr, span_boldwarning("You must verify your Discord account before joining. Use 'Verify Discord Account' in the OOC menu."))
+			return
 		if(!SSticker?.IsRoundInProgress())
 			to_chat(usr, "<span class='boldwarning'>The game is starting. You cannot join yet.</span>")
 			return
@@ -223,6 +229,9 @@ GLOBAL_LIST_INIT(roleplay_readme, file2list("strings/rt/Lore_Primer.txt"))
 		LateChoices()
 
 	if(href_list["SelectedJob"])
+		if(!is_discord_verified())
+			to_chat(usr, span_boldwarning("You must verify your Discord account before joining. Use 'Verify Discord Account' in the OOC menu."))
+			return
 		if(!SSticker?.IsRoundInProgress())
 			to_chat(usr, "<span class='danger'>The round is either not ready, or has already finished...</span>")
 			return
@@ -668,3 +677,13 @@ GLOBAL_LIST_INIT(roleplay_readme, file2list("strings/rt/Lore_Primer.txt"))
 
 		return FALSE //This is the only case someone should actually be completely blocked from antag rolling as well
 	return TRUE
+
+
+/mob/dead/new_player/proc/is_discord_verified()
+	if(!CONFIG_GET(flag/sql_enabled))
+		return TRUE // Не запираем игроков, если SQL вообще не настроен на сервере
+	if(!ckey)
+		return FALSE
+	if(SSdiscord?.lookup_id(ckey))
+		return TRUE
+	return FALSE
