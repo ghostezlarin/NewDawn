@@ -193,6 +193,9 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/lobby)
 	if(!.)
 		return
 	var/mob/dead/new_player/new_player = hud.mymob
+	if(!ready && !new_player.is_discord_verified())
+		to_chat(new_player, span_boldwarning("You must verify your Discord account before readying up. Use 'Verify Discord Account' in the OOC menu."))
+		return
 	ready = !ready
 	if(ready)
 		new_player.ready = PLAYER_READY_TO_PLAY
@@ -227,6 +230,11 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/lobby)
 /atom/movable/screen/lobby/button/join/Click(location, control, params)
 	. = ..()
 	if(!.)
+		return
+
+	var/mob/dead/new_player/verify_check_player = hud.mymob
+	if(!verify_check_player.is_discord_verified())
+		to_chat(verify_check_player, span_boldwarning("You must verify your Discord account before joining. Use 'Verify Discord Account' in the OOC menu."))
 		return
 
 	if(!SSticker?.IsRoundInProgress())
