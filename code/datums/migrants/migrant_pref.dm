@@ -18,6 +18,9 @@
 	if((new_state == TRUE) && SSmigrants.admin_disabled)
 		to_chat(prefs.parent, span_boldwarning("Migration is disabled!"))
 		return
+	if((new_state == TRUE) && CONFIG_GET(flag/sql_enabled) && prefs.parent && !SSdiscord?.lookup_id(prefs.parent.ckey))
+		to_chat(prefs.parent, span_boldwarning("You must verify your Discord account before joining the migrant queue. Use 'Verify Discord Account' in the OOC menu."))
+		return
 	role_preferences.Cut()
 	active = new_state
 	if(!silent && prefs.parent)
