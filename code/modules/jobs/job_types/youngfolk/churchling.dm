@@ -25,7 +25,7 @@
 	total_positions = 2
 	spawn_positions = 2
 
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	allowed_races = RACES_PLAYER_ALL
 	allowed_patrons = UNDIVIDED_TEMPLE_PATRONS
 

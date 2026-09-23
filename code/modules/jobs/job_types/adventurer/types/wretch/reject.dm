@@ -41,7 +41,7 @@
 		SPEC_ID_DWARF_ORC,\
 		SPEC_ID_TIEFLING,\
 	)
-	allowed_ages = list(AGE_ADULT, AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	total_positions = 1
 	knows_the_town = TRUE
 	known_by_the_town = TRUE

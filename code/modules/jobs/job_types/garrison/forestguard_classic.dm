@@ -16,7 +16,7 @@
 	spawn_positions = 0
 	selection_color = "#0d6929"
 
-	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL, AGE_CHILD)
+	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL, AGE_ADULT)
 	allowed_races = RACES_PLAYER_ALL
 	blacklisted_species = list(SPEC_ID_HALFLING, SPEC_ID_HALF_SNOW_ELF, SPEC_ID_SNOW_ELF)
 	give_bank_account = 30
@@ -258,7 +258,7 @@
 	tutorial = "For your terrible orphan pranks and antics in the city, you were rounded up by the city's Watch and put to work in the infamous forest garrison. \n\n A ruffian by circumstance, a proven listener of war stories - you might just become more than a troublemaker."
 	outfit = /datum/outfit/forestguard_classic/ruffian
 	category_tags = list(CTAG_FORGARRISON)
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	blacklisted_species = list(SPEC_ID_HALFLING, SPEC_ID_KOBOLD, SPEC_ID_KOBOLD_FORMIKRAG, SPEC_ID_HALF_SNOW_ELF, SPEC_ID_SNOW_ELF)
 
 	attribute_sheet = /datum/attribute_holder/sheet/job/forestguard_classic/ruffian

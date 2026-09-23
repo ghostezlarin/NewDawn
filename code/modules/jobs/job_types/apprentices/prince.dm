@@ -23,7 +23,7 @@
 	cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
 
 	allowed_races = RACES_PLAYER_ROYALTY
-	allowed_ages = list(AGE_ADULT, AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	advclass_cat_rolls = list(CTAG_HEIR = 20)
 	honorary = "Prince"
 	honorary_f = "Princess"
@@ -56,7 +56,7 @@
 
 /datum/job/advclass/heir
 	inherit_parent_title = TRUE
-	allowed_ages = list(AGE_ADULT, AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	allowed_races = RACES_PLAYER_ROYALTY
 	exp_type = list(EXP_TYPE_NOBLE)
 	exp_types_granted = list(EXP_TYPE_NOBLE)

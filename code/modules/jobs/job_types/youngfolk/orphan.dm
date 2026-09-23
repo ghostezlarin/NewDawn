@@ -7,7 +7,7 @@
 	job_flags = (JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK)
 	display_order = JDO_ORPHAN
 	factions = list(FACTION_TOWN)
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	total_positions = 12
 	spawn_positions = 12
 	can_have_apprentices = FALSE
@@ -60,7 +60,7 @@
 	outfit = /datum/outfit/advclass/orphanadv/bbrat
 	category_tags = list(CTAG_ORPHAN)
 	attribute_sheet = /datum/attribute_holder/sheet/job/advclass/orphanadv/bbrat
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	inherit_parent_title = TRUE
 
 /datum/job/advclass/orphanadv/bbrat/after_spawn(mob/living/carbon/human/spawned, client/player_client)
@@ -144,7 +144,7 @@
 	outfit = /datum/outfit/orphanadv/rrascal
 	category_tags = list(CTAG_ORPHAN)
 	attribute_sheet = /datum/attribute_holder/sheet/job/orphanadv/rrascal
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	inherit_parent_title = TRUE
 
 /datum/job/orphanadv/rrascal/after_spawn(mob/living/carbon/human/spawned, client/player_client)
@@ -214,7 +214,7 @@
 	outfit = /datum/outfit/orphanadv/sscamp
 	category_tags = list(CTAG_ORPHAN)
 	attribute_sheet = /datum/attribute_holder/sheet/job/orphanadv/sscamp
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	inherit_parent_title = TRUE
 
 /datum/job/orphanadv/scamp/after_spawn(mob/living/carbon/human/spawned, client/player_client)
@@ -273,7 +273,7 @@
 	outfit = /datum/outfit/orphanadv/uurchin
 	category_tags = list(CTAG_ORPHAN)
 	attribute_sheet = /datum/attribute_holder/sheet/job/orphanadv/uurchin
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	inherit_parent_title = TRUE
 
 /datum/job/orphanadv/uurchin/after_spawn(mob/living/carbon/human/spawned, client/player_client)
@@ -330,7 +330,7 @@
 	outfit = /datum/outfit/orphanadv/wwastrel
 	category_tags = list(CTAG_ORPHAN)
 	attribute_sheet = /datum/attribute_holder/sheet/job/orphanadv/wwastrel
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	inherit_parent_title = TRUE
 
 /datum/job/orphanadv/wwastrel/after_spawn(mob/living/carbon/human/spawned, client/player_client)
@@ -380,7 +380,7 @@
 	outfit = /datum/outfit/orphanadv/wward
 	category_tags = list(CTAG_ORPHAN)
 	attribute_sheet = /datum/attribute_holder/sheet/job/orphanadv/wward
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	inherit_parent_title = TRUE
 	traits = list(
 		TRAIT_DEADNOSE,
@@ -449,7 +449,7 @@
 	outfit = /datum/outfit/orphanadv/ccastoff
 	category_tags = list(CTAG_ORPHAN)
 	attribute_sheet = /datum/attribute_holder/sheet/job/orphanadv/ccastoff
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	inherit_parent_title = TRUE
 	traits = list(
 		TRAIT_BARDIC_TRAINING,
