@@ -4750,4 +4750,6 @@
 #include "interface\fonts\datums\vaticanus.dm"
 #include "interface\fonts\datums\wernicke.dm"
 #include "interface\fonts\datums\yataghan.dm"
+#include "modular_vanderlin_ui\code\_onclick\hud\character_sheet_button.dm"
+#include "modular_vanderlin_ui\code\datums\character_sheet.dm"
 // END_INCLUDE
