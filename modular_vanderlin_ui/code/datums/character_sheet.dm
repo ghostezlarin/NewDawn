@@ -23,7 +23,16 @@
 	if(!owner)
 		return data
 	var/client/owner_client = owner.client
-	data["character_name"] = (owner_client && owner_client.prefs) ? (owner_client.prefs.read_preference(/datum/preference/text/real_name) || "Unnamed") : "Unnamed"
+	if(!owner_client || !owner_client.prefs)
+		return data
+	var/datum/preferences/prefs = owner_client.prefs
+	data["character_name"] = prefs.read_preference(/datum/preference/text/real_name) || "Unnamed"
+	data["pronouns"] = prefs.read_preference(/datum/preference/choiced/pronouns)
+	data["age"] = prefs.read_preference(/datum/preference/choiced/age)
+	data["voice_type"] = prefs.read_preference(/datum/preference/choiced/voice_type)
+	data["accent"] = prefs.read_preference(/datum/preference/choiced/selected_accent)
+	data["voice_color"] = prefs.read_preference(/datum/preference/color/voice_color)
+	data["dominant_hand"] = prefs.read_preference(/datum/preference/choiced/domhand)
 	return data
 
 /datum/character_sheet/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
