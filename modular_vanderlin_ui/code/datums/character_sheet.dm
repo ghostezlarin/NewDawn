@@ -31,8 +31,8 @@
 	data["age"] = prefs.read_preference(/datum/preference/choiced/age)
 	data["voice_type"] = prefs.read_preference(/datum/preference/choiced/voice_type)
 	data["accent"] = prefs.read_preference(/datum/preference/choiced/selected_accent)
-	data["voice_color"] = prefs.read_preference(/datum/preference/color/voice_color)
-	data["dominant_hand"] = prefs.read_preference(/datum/preference/choiced/domhand)
+	data["voice_color"] = "#" + prefs.read_preference(/datum/preference/color/voice_color)
+	data["dominant_hand"] = (prefs.read_preference(/datum/preference/choiced/domhand) == 1) ? "Left" : "Right"
 	return data
 
 /datum/character_sheet/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
