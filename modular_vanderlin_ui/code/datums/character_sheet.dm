@@ -33,6 +33,9 @@
 	data["accent"] = prefs.read_preference(/datum/preference/choiced/selected_accent)
 	data["voice_color"] = "#" + prefs.read_preference(/datum/preference/color/voice_color)
 	data["dominant_hand"] = (prefs.read_preference(/datum/preference/choiced/domhand) == 1) ? "Left" : "Right"
+	data["pq"] = get_playerquality(owner.ckey)
+	data["faith"] = prefs.read_preference(/datum/preference/choiced/faith)
+	data["patron"] = prefs.read_preference(/datum/preference/choiced/patron)
 	return data
 
 /datum/character_sheet/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
