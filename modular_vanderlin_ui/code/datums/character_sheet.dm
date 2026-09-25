@@ -22,7 +22,8 @@
 	var/list/data = list()
 	if(!owner)
 		return data
-	data["character_name"] = owner.real_name
+	var/client/owner_client = owner.client
+	data["character_name"] = (owner_client && owner_client.prefs) ? (owner_client.prefs.read_preference(/datum/preference/text/real_name) || "Unnamed") : "Unnamed"
 	return data
 
 /datum/character_sheet/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
