@@ -14,6 +14,8 @@ type Data = {
   pq: number;
   faith: string;
   patron: string;
+  species: string;
+  culture: string;
 };
 
 export const CharacterSheet = () => {
@@ -30,6 +32,8 @@ export const CharacterSheet = () => {
     pq = 0,
     faith = '',
     patron = '',
+    species = '',
+    culture = '',
   } = data;
 
   return (
@@ -47,6 +51,12 @@ export const CharacterSheet = () => {
             onClick={() => setCurrentTab('class')}
           >
             Class
+          </Tabs.Tab>
+          <Tabs.Tab
+            selected={currentTab === 'appearance'}
+            onClick={() => setCurrentTab('appearance')}
+          >
+            Appearance
           </Tabs.Tab>
         </Tabs>
 
@@ -72,6 +82,15 @@ export const CharacterSheet = () => {
               <LabeledList.Item label="Player Quality">{pq}</LabeledList.Item>
               <LabeledList.Item label="Faith">{faith}</LabeledList.Item>
               <LabeledList.Item label="Patron">{patron}</LabeledList.Item>
+            </LabeledList>
+          </Section>
+        )}
+
+        {currentTab === 'appearance' && (
+          <Section title="Appearance">
+            <LabeledList>
+              <LabeledList.Item label="Species">{species}</LabeledList.Item>
+              <LabeledList.Item label="Culture">{culture}</LabeledList.Item>
             </LabeledList>
           </Section>
         )}

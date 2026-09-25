@@ -36,6 +36,8 @@
 	data["pq"] = get_playerquality(owner.ckey)
 	data["faith"] = prefs.read_preference(/datum/preference/choiced/faith)
 	data["patron"] = prefs.read_preference(/datum/preference/choiced/patron)
+	data["species"] = prefs.read_preference(/datum/preference/choiced/species)
+	data["culture"] = prefs.read_preference(/datum/preference/choiced/culture)
 	return data
 
 /datum/character_sheet/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
